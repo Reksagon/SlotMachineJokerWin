@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "836891622892",
+    "project_id": "comjokeeeeerwininapp",
+    "storage_bucket": "comjokeeeeerwininapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836891622892:android:131fd02a086a1095cc54c9",
+        "android_client_info": {
+          "package_name": "com.jokeeeeerwin.in.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836891622892-3rv9gb0av6glqnihcbk6or5libv93sln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeTIL1tii8A53HtCoo6EtM7poKc_kHOSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836891622892-3rv9gb0av6glqnihcbk6or5libv93sln.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
