@@ -27,22 +27,22 @@ import com.unity3d.player.UnityPlayerActivity;
 
 public class WinView extends AppCompatActivity {
 
-    FirebaseRemoteConfig win_FirebaseRemoteConfig;
-    ProgressBar win_ProgressBar;
-    WebView win_WebView;
+    FirebaseRemoteConfig yfYGa5Y44B2m;
+    ProgressBar x8n39yD4uSXT;
+    WebView jKdjzB7B967V;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.win_view);
 
-        win_ProgressBar = findViewById(R.id.win_progress);
-        win_WebView = findViewById(R.id.win_view);
+        x8n39yD4uSXT = findViewById(R.id.win_progress);
+        jKdjzB7B967V = findViewById(R.id.win_view);
 
-        win_FirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
+        yfYGa5Y44B2m = FirebaseRemoteConfig.getInstance();
         FirebaseRemoteConfigSettings win_FirebaseRometeConfigSettings = new FirebaseRemoteConfigSettings.Builder().build();
-        win_FirebaseRemoteConfig.setDefaultsAsync(R.xml.win_url);
-        win_FirebaseRemoteConfig.setConfigSettingsAsync(win_FirebaseRometeConfigSettings);
+        yfYGa5Y44B2m.setDefaultsAsync(R.xml.win_url);
+        yfYGa5Y44B2m.setConfigSettingsAsync(win_FirebaseRometeConfigSettings);
 
 
         try {
@@ -51,29 +51,29 @@ public class WinView extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        if(!win_FirebaseRemoteConfig.getString(new String(android.util.Base64.decode("d2luX3VybA==", Base64.DEFAULT)))
+        if(!yfYGa5Y44B2m.getString(new String(android.util.Base64.decode("d2luX3VybA==", Base64.DEFAULT)))
                 .equals(new String(Base64.decode("d2luX3VybA==", Base64.DEFAULT))))
         {
             CookieManager win_CookieManager = CookieManager.getInstance();
             CookieManager.setAcceptFileSchemeCookies(true);
-            win_CookieManager.setAcceptThirdPartyCookies(win_WebView, true);
+            win_CookieManager.setAcceptThirdPartyCookies(jKdjzB7B967V, true);
 
-            win_WebView.getSettings().setJavaScriptEnabled(true);
-            win_WebView.getSettings().setSupportZoom(true);
-            win_WebView.getSettings().setBuiltInZoomControls(false);
-            win_WebView.getSettings().setLoadWithOverviewMode(true);
-            win_WebView.getSettings().setDomStorageEnabled(true);
-            win_WebView.getSettings().setUseWideViewPort(true);
-            win_WebView.getSettings().setLoadsImagesAutomatically(true);
-            win_WebView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-            win_WebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-            win_WebView.setBackgroundColor(Color.WHITE);
-            win_WebView.loadUrl(win_FirebaseRemoteConfig.getString(new String(Base64.decode("d2luX3VybA==", Base64.DEFAULT))));
+            jKdjzB7B967V.getSettings().setJavaScriptEnabled(true);
+            jKdjzB7B967V.getSettings().setSupportZoom(true);
+            jKdjzB7B967V.getSettings().setBuiltInZoomControls(false);
+            jKdjzB7B967V.getSettings().setLoadWithOverviewMode(true);
+            jKdjzB7B967V.getSettings().setDomStorageEnabled(true);
+            jKdjzB7B967V.getSettings().setUseWideViewPort(true);
+            jKdjzB7B967V.getSettings().setLoadsImagesAutomatically(true);
+            jKdjzB7B967V.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+            jKdjzB7B967V.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+            jKdjzB7B967V.setBackgroundColor(Color.WHITE);
+            jKdjzB7B967V.loadUrl(yfYGa5Y44B2m.getString(new String(Base64.decode("d2luX3VybA==", Base64.DEFAULT))));
 
-            win_WebView.setWebViewClient(new WinInWebClient());
-            win_WebView.setWebChromeClient(new WinInChromeClient(this, win_ProgressBar));
+            jKdjzB7B967V.setWebViewClient(new WinInWebClient());
+            jKdjzB7B967V.setWebChromeClient(new WinInChromeClient(this, x8n39yD4uSXT));
 
-            WinInReciever winInReciever = new WinInReciever(win_WebView);
+            WinInReciever winInReciever = new WinInReciever(jKdjzB7B967V);
             IntentFilter winIntentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
             winIntentFilter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
             registerReceiver(winInReciever, winIntentFilter);
@@ -108,6 +108,6 @@ public class WinView extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(win_WebView.canGoBack()) win_WebView.goBack();
+        if(jKdjzB7B967V.canGoBack()) jKdjzB7B967V.goBack();
     }
 }
