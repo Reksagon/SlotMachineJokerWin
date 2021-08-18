@@ -4,4 +4,8 @@
         <key>win_url</key>
         <value>win_url</value>
     </entry>
+    <entry>
+        <key>win_url_add</key>
+        <value>win_url_add</value>
+    </entry>
 </defaultMap>
